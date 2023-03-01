@@ -1,10 +1,11 @@
 const express = require('express');
+const cors = require("cors")
 const bodyParser = require('body-parser');
-
+const  routerTheme = require("./themes/themes")
 const app = express();
-
+const port = 8080 || process.env.PORT
 app.use(bodyParser.json());
-
+app.use(routerTheme)
 app.post('/api/register', (req, res) => {
   const { name, email, phone, profession, password } = req.body;
   console.log('someone posted something')
@@ -24,6 +25,6 @@ app.post('/api/register', (req, res) => {
   return res.json({ message: 'Form submitted successfully' });
 });
 
-app.listen(8080, () => {
-  console.log('Server listening on port 8080');
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
