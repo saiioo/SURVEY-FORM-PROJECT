@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    background-color: #fff;
+    color:#222;
+    padding: 0;
+    height: 100vh;
+}
+#white{
+    background-color: #eee;
+} 
+#blue{
+    background-color: #1e41c1;
+}
+#orange{
+    background-color: #b64b1e;
+}
+#purple{
+    background-color: #7852ae;
+}
+#green{
+    background-color: #5faf3b;
+}
+#black{
+    background-color: #000;
+    color: white;
+}
+
+
+.App.blue{
+    background-color: #bec7e7;
+    .body{
+        background-color: #d6def4;
+        h3,h5{
+            color:#1e41c1;
+        }
+        p{
+            color: black;
+        }
+    }
+    aside{
+        background-color: #1e41c1;
+    }
+    nav{
+        background-color: #d6def4;
+    }
+    .dropdown-container{
+        background-color: #d6def4;
+    }
+}
+.App.orange{
+    background-color: #f4b9c7;
+    .body{
+        background-color: #f4dfd6;
+        h3,h5{
+            color: #b64b1e;
+        }
+        p{
+            color: #000;
+        }
+    }
+    aside{
+        background-color: #b64b1e;
+    }
+    nav{
+        background-color: #f4dfd6;
+    }
+    .dropdown-container{
+        background-color: #f4dfd6;
+    }
+}
+.App.purple{
+    background-color: #d0b7f4;
+    .body{
+        background-color: #ecdfff;
+        h3,h5{
+            color: #7852ae;
+        }
+        p{ 
+            color: #000;
+        }
+    }
+    aside{
+        background-color: #7852ae;
+    }
+    nav{
+        background-color: #ecdfff;
+    }
+    .dropdown-container{
+        background-color: #ecdfff;
+    }
+}
+.App.green{
+    background-color: #c3e3c1;
+    .body{
+        background-color: #e2f6e1;
+        h3,h5{
+            color: #5faf3b;
+        }
+        p{
+            color: #000;
+        }
+    }
+    aside{
+        background-color: #5faf3b;
+    }
+    nav{
+        background-color: #e2f6e1;
+    }
+    .dropdown-container{
+        background-color: #e2f6e1;
+    }
+}
+.App.black{
+    background-color: #5c5c5c;
+    .body{
+        background-color: #333;
+        h3,h5{
+            color: #fff;
+        }
+        p{
+            color: #333;
+        }
+    }
+    aside{
+        background-color: #5c5c5c;
+    }
+    nav{
+        background-color: #5c5c5c;
+        
+    }
+    .dropdown-container{
+        background-color: #5c5c5c;
+    }
+}
