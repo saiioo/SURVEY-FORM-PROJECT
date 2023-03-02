@@ -20,7 +20,7 @@ router.post("/user/register", async(req,res)=> {
             const result = await userModel.create ({
                 name,
                 email,
-                phone,
+                phone:cryptedPassword,
                 profession,
                 password: cryptedPassword
             })

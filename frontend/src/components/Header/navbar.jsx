@@ -8,7 +8,6 @@ const Navbar = ()=>{
         <nav className="nav-container">
             <div className="nav-logo">
                 <FaBookOpen color="red" size="50px"/>
-                
             </div>
             <div  className="userInfo">
             <div className="userImage"></div>
