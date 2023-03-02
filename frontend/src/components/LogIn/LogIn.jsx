@@ -112,6 +112,13 @@ function Login({ history }) {
   // }
 
 
+const handleCheckInput=()=>{
+  if(email===''){
+    alert('Give email')
+  }else if(password ===''){
+    alert('Give Password')
+  }
+}
 
 const handleFormSubmit = async (event) => {
   console.log(password, email);
@@ -169,14 +176,14 @@ const handleFormSubmit = async (event) => {
         <div className="form-body">
           <form onSubmit={handleFormSubmit}>
             <label>
-              <input placeholder="email" type="email" name="email" className="email-input" value={email} onChange={(event) => setEmail(event.target.value)} />
+              <input placeholder="email" type="email" name="email" className="email-input" value={email} onChange={(event) => setEmail(event.target.value)} required/>
             </label>
             <br />
             <label>
-              <input placeholder="password" type="password" name="password" className="password-input" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input placeholder="password" type="password" name="password" className="password-input" value={password} onChange={(event) => setPassword(event.target.value)} required/>
             </label>
             <br />
-            <button type="submit" id="signin-button">Sign In</button>
+            <button type="submit" id="signin-button" onClick={handleCheckInput}>Sign In</button>
           </form>
         </div>
       </div>
