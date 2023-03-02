@@ -1,12 +1,25 @@
+body{
+  background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  font-size: 1rem; 
+}
 .register-button {
   display: block;
   margin-left: 0px;
-  padding: 0.4rem 2rem;
+  padding: 0.5rem 2.5rem;
   text-decoration: none;
+  background-color: #278DF1;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+
 }
 
 .link-btn{
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .main-container {
@@ -18,6 +31,7 @@
   height: 80vh;
   width: 80vw;
 }
+
 
 .header-container {
   display: flex;
@@ -103,6 +117,7 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.25rem;
+  border: none;
   border-bottom: 1px solid #ccc;
 }
 
@@ -119,6 +134,7 @@
   font-size: 1.875rem;
   width: 12.5rem;
   font-weight: 600;
+  color: #5C5C5C;
 }
 
 .welcome-info{
@@ -137,6 +153,10 @@
 #signin-button{
   border-radius: 25px;
   padding: 0.4rem 3rem;
+  background-color: #278DF1;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .form-header h2{

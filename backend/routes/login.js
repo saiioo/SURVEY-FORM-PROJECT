@@ -9,12 +9,13 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 router.post("/user/login", async(req, res)=>{
+    console.log('api fetched')
     try{
         
         const {email, password} = req.body;
         const user_data = await userModel.findOne({email:email})
         if(!user_data){
-            return res.status(404).json({
+            return res.status(200).json({
                 status:"Failed",
                 message:"Invalid Email"
             })
