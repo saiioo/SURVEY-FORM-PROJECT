@@ -6,6 +6,8 @@
 body{
   background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   font-size: 1rem; 
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .container{
@@ -179,9 +181,10 @@ input{
     }
   .container{
   flex-direction: column;
+  position: fixed;
   margin: 5rem 2.5rem;
   width: 80%;
-  height: 100%;
+  height: 100vh;
   padding: none;
   align-items: center;
   }
