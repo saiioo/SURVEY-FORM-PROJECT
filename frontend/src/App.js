@@ -33,37 +33,37 @@
 import React from 'react';
 
 import { useEffect, useState } from 'react';
-// // import SurveyForm from './components/SurveyForm/SurveyForm';
-// // import SurveyList from './components/SurveyList/SurveyList';
-// // import CreateSurvey from './components/SurveyForm/SurveyForm';
-// // import SurveyList from './components/SurveyList/SurveyList';
+import SurveyForm from './components/SurveyForm/SurveyForm';
+import SurveyList from './components/SurveyList/SurveyList';
+import CreateSurvey from './components/SurveyForm/SurveyForm';
+
 import "./components/ThemesDropDownMenu/switch.scss"
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import SurveyForm from './components/SurveyForm/SurveyForm';
-// import Login from './components/LogIn/LogIn';
-// import SignUp from './components/SignUp/SignUp';
-import SurveyList from './components/SurveyList/SurveyList';
+// import SurveyForm from './components/SurveyForm/SurveyForm';
+import Login from './components/LogIn/LogIn';
+import SignUp from './components/SignUp/SignUp';
+// import SurveyList from './components/SurveyList/SurveyList';
 
 function App() {
     const [theme, setTheme] = useState('white');
   const currentColor = localStorage.getItem('theme-color');
-
+  
 
     useEffect(() => {
     setTheme(currentColor)
 
   }, [theme])
   return (
-    <div  className={`App ${theme}`}>
+    <div  className='App'>
       <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<LandingPage/>}/> */}
-        {/* <Route path="/" element={<Login />}/>
-        <Route path='/SurveyList' element={<SurveyList />}/>
+        <Route path="/" element={<Login/>}/>
+        {/* <Route path='/SurveyList' element={<SurveyList />}/> */}
 
-        <Route path="/Reg" element={<SignUp/>}/> */}
-        <Route path='/' element={<SurveyList/>} />
-        <Route path='form' element={<SurveyForm/>} />
+        <Route path="/Reg" element={<SignUp/>}/>
+        {/* <Route path='/' element={<SurveyList/>} /> */}
+        {/* <Route path='form' element={<SurveyForm/>} /> */}
         <Route/>
       </Routes>
     </BrowserRouter>

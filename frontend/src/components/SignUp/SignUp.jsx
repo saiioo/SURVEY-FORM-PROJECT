@@ -61,11 +61,11 @@ function SignUp() {
   return (
     <div className='container'>
       <div className='left-container'>
-        <h1 className='left-h1-1st'>Welcome Page</h1>
-        <h1 className='left-h1-2nd'>One line text Will be here</h1>
+        <h1 className='left-h1-1st'>Welcome MAP Survey</h1>
+        <h2 className='left-h1-2nd'>An online platform To create Survey</h2>
         <p className='left-p-1st'>Sign in to continue access pages</p>
         <p className='left-p-2nd'>
-          Already Have An Account{' '}
+          Already Have An Account*{' '}
           <Link to='/' className='left-link'>
             <button>
             Sign In
@@ -106,6 +106,8 @@ function SignUp() {
                   placeholder='phone'
                   type='number'
                   name='phone'
+                  minLength='10'
+                  maxLength='10'
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
