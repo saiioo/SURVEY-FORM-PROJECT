@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Header/navbar';
 import SideBar from '../SideBar/SideBar';
 import './SurveyList.css'
+import {Link} from 'react-router-dom'
 
 
 function SurveyList() {
@@ -15,11 +16,128 @@ function SurveyList() {
     description: 'Lorem ipsum dolor',
     start_date: '2022-10-16',
     end_date: '2022-11-08'
-    }
+    },
+    {
+      id: 1,
+      title: 'Untitled',
+      name: 'Product A',
+      type: 'Type B',
+      description: 'Lorem ipsum dolor',
+      start_date: '2022-10-16',
+      end_date: '2022-11-08'
+      },
+      {
+        id: 1,
+        title: 'Untitled',
+        name: 'Product A',
+        type: 'Type B',
+        description: 'Lorem ipsum dolor',
+        start_date: '2022-10-16',
+        end_date: '2022-11-08'
+        },
+        {
+          id: 1,
+          title: 'Untitled',
+          name: 'Product A',
+          type: 'Type B',
+          description: 'Lorem ipsum dolor',
+          start_date: '2022-10-16',
+          end_date: '2022-11-08'
+          },
+          {
+            id: 1,
+            title: 'Untitled',
+            name: 'Product A',
+            type: 'Type B',
+            description: 'Lorem ipsum dolor',
+            start_date: '2022-10-16',
+            end_date: '2022-11-08'
+            },
+            {
+              id: 1,
+              title: 'Untitled',
+              name: 'Product A',
+              type: 'Type B',
+              description: 'Lorem ipsum dolor',
+              start_date: '2022-10-16',
+              end_date: '2022-11-08'
+              },
+              {
+                id: 1,
+                title: 'Untitled',
+                name: 'Product A',
+                type: 'Type B',
+                description: 'Lorem ipsum dolor',
+                start_date: '2022-10-16',
+                end_date: '2022-11-08'
+                }
+                ,    {
+                  id: 1,
+                  title: 'Untitled',
+                  name: 'Product A',
+                  type: 'Type B',
+                  description: 'Lorem ipsum dolor',
+                  start_date: '2022-10-16',
+                  end_date: '2022-11-08'
+                  }
+                  ,    {
+                    id: 1,
+                    title: 'Untitled',
+                    name: 'Product A',
+                    type: 'Type B',
+                    description: 'Lorem ipsum dolor',
+                    start_date: '2022-10-16',
+                    end_date: '2022-11-08'
+                    },    {
+                      id: 1,
+                      title: 'Untitled',
+                      name: 'Product A',
+                      type: 'Type B',
+                      description: 'Lorem ipsum dolor',
+                      start_date: '2022-10-16',
+                      end_date: '2022-11-08'
+                      },    {
+                        id: 1,
+                        title: 'Untitled',
+                        name: 'Product A',
+                        type: 'Type B',
+                        description: 'Lorem ipsum dolor',
+                        start_date: '2022-10-16',
+                        end_date: '2022-11-08'
+                        },
+                        {
+                          id: 1,
+                          title: 'Untitled',
+                          name: 'Product A',
+                          type: 'Type B',
+                          description: 'Lorem ipsum dolor',
+                          start_date: '2022-10-16',
+                          end_date: '2022-11-08'
+                          },    {
+                            id: 1,
+                            title: 'Untitled',
+                            name: 'Product A',
+                            type: 'Type B',
+                            description: 'Lorem ipsum dolor',
+                            start_date: '2022-10-16',
+                            end_date: '2022-11-08'
+                            },    {
+                              id: 1,
+                              title: 'Untitled',
+                              name: 'Product A',
+                              type: 'Type B',
+                              description: 'Lorem ipsum dolor',
+                              start_date: '2022-10-16',
+                              end_date: '2022-11-08'
+                              }
   ]
+
+
+  function handleClick(){
+  }
   const ren = data.map((item) => {
     return (
-      <tr>
+      <tr onClick={handleClick}>
         <td>{item.name}</td>
         <td>{item.description}</td>
         <td>{item.title}</td>
@@ -47,7 +165,7 @@ function SurveyList() {
             <div className='nb-left'>
               <img src="https://cdn-icons-png.flaticon.com/512/8550/8550935.png" alt="burger-icon" />
               <img src="https://cdn-icons-png.flaticon.com/512/57/57164.png" alt="filter-icon" />
-              <button>create</button>
+              <Link to='/form' ><button>create</button></Link>
             </div>
           </div>
           <div>

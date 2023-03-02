@@ -75,13 +75,15 @@
 
 
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios'
 import './LogIn.css'
 
 function Login({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // const nav = Navigate()
 
   // const handleFormSubmit = async (event) => {
   //   console.log(password,email)
@@ -126,12 +128,14 @@ const handleFormSubmit = async (event) => {
     alert(data.message)
 
     if (response.status === 200) {
+      alert('user login in sucsuessfully')
       localStorage.setItem('token', data.message.token);
       localStorage.setItem(
         'userdetails',
         JSON.stringify(data.message.userdetails)
       );
-      history.push('/SurveyList');
+
+        
     } else {
       console.log('i came here');
       console.log(data.error);

@@ -9,9 +9,7 @@
 // function App() {
 // //   const [theme, setTheme] = useState('white');
 // //   const currentColor = localStorage.getItem('theme-color');
-// //   <div className={`App ${theme}`}>
-// //   <SurveyForm/>
-// // </div>
+
 // {/* < SurveyList/> */}
 
 // //   useEffect(() => {
@@ -19,9 +17,9 @@
 
 // //   }, [theme])
 //   return (
-//     <div>
-
-//     </div>
+//           <div className={`App ${theme}`}>
+//   <SurveyForm/>
+// </div>
 //   );
 // }
 // export default App;
@@ -32,25 +30,40 @@
 
 
 
-
-
-
 import React from 'react';
+
+import { useEffect, useState } from 'react';
+// // import SurveyForm from './components/SurveyForm/SurveyForm';
+// // import SurveyList from './components/SurveyList/SurveyList';
+// // import CreateSurvey from './components/SurveyForm/SurveyForm';
+// // import SurveyList from './components/SurveyList/SurveyList';
+import "./components/ThemesDropDownMenu/switch.scss"
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import Login from './components/LogIn/LogIn';
-import SignUp from './components/SignUp/SignUp';
+import SurveyForm from './components/SurveyForm/SurveyForm';
+// import Login from './components/LogIn/LogIn';
+// import SignUp from './components/SignUp/SignUp';
 import SurveyList from './components/SurveyList/SurveyList';
 
 function App() {
+    const [theme, setTheme] = useState('white');
+  const currentColor = localStorage.getItem('theme-color');
+
+
+    useEffect(() => {
+    setTheme(currentColor)
+
+  }, [theme])
   return (
-    <div className="App">
+    <div  className={`App ${theme}`}>
       <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<LandingPage/>}/> */}
-        <Route path="/" element={<Login />}/>
+        {/* <Route path="/" element={<Login />}/>
         <Route path='/SurveyList' element={<SurveyList />}/>
 
-        <Route path="/Reg" element={<SignUp/>}/>
+        <Route path="/Reg" element={<SignUp/>}/> */}
+        <Route path='/' element={<SurveyList/>} />
+        <Route path='form' element={<SurveyForm/>} />
         <Route/>
       </Routes>
     </BrowserRouter>
