@@ -125,7 +125,7 @@ const handleFormSubmit = async (event) => {
 
     const data = response.data;
     console.log(data)
-    alert(data.message)
+    
 
     if (response.status === 200) {
       alert('user login in sucsuessfully')
