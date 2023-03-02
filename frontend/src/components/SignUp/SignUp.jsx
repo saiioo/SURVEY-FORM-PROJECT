@@ -33,7 +33,7 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch('http://localhost:8080/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,11 @@ function SignUp() {
         const errorMessage = error.message || 'Something went wrong';
         document.getElementById('error-message').textContent = errorMessage;
       }
+      if(response.status == 409){
+        alert('user already exists')
+      }
     } catch (error) {
+      console.log(error)
       document.getElementById('error-message').textContent =
         error.message || 'Something went wrong';
     }
@@ -62,7 +66,7 @@ function SignUp() {
         <p className='left-p-1st'>Sign in to continue access pages</p>
         <p className='left-p-2nd'>
           Already Have An Account{' '}
-          <Link to='/login' className='left-link'>
+          <Link to='/' className='left-link'>
             <button>
             Sign In
             </button>
@@ -153,7 +157,7 @@ function SignUp() {
               </button>
           </form>
           <div className='error-block'>
-            <p id='error-message' className='error-message'></p>
+            <p id='error-message'  className='error-message'></p>
           </div>
         </div>
       </div>
