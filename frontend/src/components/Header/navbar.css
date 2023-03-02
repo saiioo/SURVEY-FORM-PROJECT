@@ -5,9 +5,10 @@
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     align-items: center;
-    border: 0.5px solid rgb(126, 129, 134);
+    /* border: 0.5px solid rgb(126, 129, 134); */
     color: black;
-    box-shadow: 3px 3px 10px 6px rgb(0,0,0,0.16);
+    box-shadow: 3px 3px 10px 6px rgb(0,0,0,0.15);
+    position: fixed
 }
 .userImage{
     height: 30px;

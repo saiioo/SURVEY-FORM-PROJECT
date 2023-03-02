@@ -1,0 +1,199 @@
+.register-button {
+  display: block;
+  margin-left: 0px;
+  padding: 0.4rem 2rem;
+  text-decoration: none;
+}
+
+.link-btn{
+  text-decoration: none;
+}
+
+.main-container {
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 80vw;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.header-container h1,
+.header-container h2,
+.header-container p {
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+
+.upon-div{
+  width: 47rem;
+  display: flex;
+  justify-content: end;
+}
+.header-container p:last-child {
+  margin-top: 1rem;
+}
+.welcome-text{
+  width: 200px;
+}
+
+.form-container {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  max-width: 400px;
+  width: 400px;    
+  padding: 30px 40px 30px 20px;
+}
+
+.main-container label {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-header h2,
+.form-header p {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-body label {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.form-body label input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome-header{
+  padding-bottom: 0.31rem;
+  margin: 0;
+  padding: 0;
+  color: #5C5C5C;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.welcome-text{
+  font-size: 1.875rem;
+  width: 12.5rem;
+  font-weight: 600;
+}
+
+.welcome-info{
+  font-size: 1rem;
+  padding-top: 1.2rem;
+  color: #5C5C5C;
+}
+
+.welcome-register{
+  font-size: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.625rem;
+  color: #5C5C5C;
+}
+
+#signin-button{
+  border-radius: 25px;
+  padding: 0.4rem 3rem;
+}
+
+.form-header h2{
+  color: black;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+
+.form-header p{
+  color: #5C5C5C;
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8;
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .form-container {
+    margin-left: 1rem;
+  }
+
+  .header-container h1,
+  .header-container h2,
+  .header-container p {
+    margin: 0;
+    text-align: left;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+
+  .form-body label input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+  }
+  .form-body button {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+

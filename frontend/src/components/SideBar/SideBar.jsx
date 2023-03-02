@@ -1,6 +1,6 @@
 import { FaHome, FaList } from "react-icons/fa";
 import {AiOutlineUserAdd} from "react-icons/ai"
-import "./sidebar.css"
+import "./SideBar.css"
 const SideBar = ()=>{
 
     const menu = [
