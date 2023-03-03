@@ -1,4 +1,4 @@
-import "./CreateQuestions.css"
+import '../CreateQuestion/CreateQuestion.css'
 import  {BsArrowLeft} from 'react-icons/bs'
 const Questions = ()=>{
     return(

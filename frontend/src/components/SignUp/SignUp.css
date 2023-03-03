@@ -3,11 +3,52 @@
   font-size: 16px;
 }
 
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body{
   background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   font-size: 1rem; 
-  min-height: 100vh;
-  overflow: hidden;
 }
 
 .container{
@@ -28,15 +69,20 @@ body{
   width: 30%;
 }
 
-h1{
-  padding-bottom: 0.31rem;
-  margin: 0;
-  padding: 0;
+ .left-h1-2nd{
+  /* padding-bottom: 0.31rem; */
   color: #5C5C5C;
+  padding: 0;
   font-size: 2rem;
   font-weight: 700;
+  width: 200px;
 }
-
+.left-h1-1st{
+  padding: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5C5C5C;
+}
 .left-container p{
   margin: 0;
   color: #5C5C5C;
@@ -48,11 +94,7 @@ h1{
   padding-top: 1.25rem;
 }
 
-.left-h1-2nd{
-  font-size: 1.875rem;
-  width: 12.5rem;
-  font-weight: 600;
-}
+
 
 .left-p-2nd{
   font-size: 0.75rem;
@@ -110,7 +152,7 @@ margin: 0.5rem 0;
     padding-bottom: 1.875rem;
 }
 
-input{
+.form-grid-block input{
   border-top: none;
   border-bottom: 0.063rem solid #ccc;
   border-left: none;
@@ -171,7 +213,16 @@ input{
   background-color: #3B9FFF;
   }
 
-
+  .error_msg {
+    width: 370px;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    background-color: #f34646;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+  }
   
   
   @media(max-width: 600px){
@@ -181,10 +232,9 @@ input{
     }
   .container{
   flex-direction: column;
-  position: fixed;
   margin: 5rem 2.5rem;
   width: 80%;
-  height: 100vh;
+  height: 100%;
   padding: none;
   align-items: center;
   }
