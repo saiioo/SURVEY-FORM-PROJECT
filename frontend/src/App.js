@@ -42,6 +42,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 // import SurveyForm from './components/SurveyForm/SurveyForm';
 import Login from './components/LogIn/LogIn';
 import SignUp from './components/SignUp/SignUp';
+import Questions from './components/CreateQuestion/CreateQuestion';
 // import SurveyList from './components/SurveyList/SurveyList';
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         {/* <Route path='/SurveyList' element={<SurveyList />}/> */}
 
         <Route path="/Reg" element={<SignUp/>}/>
+        <Route path="/createQuestions" element={<Questions/>}/>
         {/* <Route path='/' element={<SurveyList/>} /> */}
         {/* <Route path='form' element={<SurveyForm/>} /> */}
         <Route/>
