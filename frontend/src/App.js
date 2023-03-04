@@ -7,8 +7,9 @@ import Login from './components/LogIn/LogIn';
 import SignUp from './components/SignUp/SignUp';
 import SurveyList from './components/SurveyList/SurveyList';
 import SurveyForm from './components/SurveyForm/SurveyForm';
-import SurveyQues from './components/SurveyList/SurveyQues';
+// import SurveyQues from './components/SurveyList/SurveyQues';
 import Main from './components/Main/Main';
+import CreateQuestion from './components/Pages/createQuestionPage';
 
 function App() {
     const [theme, setTheme] = useState('white');
@@ -28,9 +29,10 @@ function App() {
         <Route path='/surveys' element={<SurveyList />}/>
         <Route path='/surveyform' element={<SurveyForm />}/>
         <Route path='/surveyform/surveys' element={<SurveyList />}/>
-        <Route path='/formques/:id' element={<SurveyQues />}/>
         <Route path='*'>NOT found</Route>
         <Route path='logout' element={<Main/>}/>
+        <Route path='/createques/:id'  element={<CreateQuestion />} />
+
         <Route/>
       </Routes>
     </BrowserRouter>

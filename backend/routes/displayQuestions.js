@@ -5,11 +5,16 @@ var bodyParser = require('body-parser')
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
-router.post("/createquestion/:id", async(req, res)=> {
+router.put("/createquestion/:id", async(req, res)=> {
+  console.log("i just come here to createquestions page")
   try{
     const id = req.params.id
-    const {questionsArr} = req.body
-    const data = await surveyModel.updateOne({ form_id: id }, { $set: {questions:questionsArr} })
+    console.log(id)
+    const questions = req.body
+    console.log(req.body)
+    console.log(questions)
+    const data = await surveyModel.updateOne({ form_id: id }, { $set: {questions:questions} })
+    console.log(data)
     if(data){
       return res.status(200).json({
         "message" : "success",
@@ -19,7 +24,7 @@ router.post("/createquestion/:id", async(req, res)=> {
   }
   catch(e){
     return res.status(500).json({
-      "message" : err.message,
+      "message" : e.message,
       "status" : "failed"
     })
   }
