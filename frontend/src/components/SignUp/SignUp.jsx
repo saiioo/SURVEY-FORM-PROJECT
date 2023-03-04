@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css'
 
 function SignUp() {
@@ -21,7 +22,7 @@ function SignUp() {
       [name]: value,
     }));
   };
-
+  const navigate = useNavigate();
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     setFormData((prevFormData) => ({
@@ -41,15 +42,15 @@ function SignUp() {
         body: JSON.stringify(formData),
       });
       if (response.status === 200) {
-        window.location.href = '/login'; // redirect to login page
+        navigate("/"); // redirect to login page
       } else {
         const error = await response.json();
         const errorMessage = error.message || 'Something went wrong';
         document.getElementById('error-message').textContent = errorMessage;
       }
-      if(response.status == 409){
-        alert('user already exists')
-      }
+      // if(response.status === 409){
+      //   alert('user already exists')
+      // }
     } catch (error) {
       console.log(error)
       document.getElementById('error-message').textContent =
@@ -79,6 +80,9 @@ function SignUp() {
           <p>Register to continue access pages</p>
         </div>
         <div className='right-second-div'>
+        <div className='error-block'>
+            <p id='error-message'  className='error-message'></p>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className='form-grid-block'>
               <label>
@@ -158,9 +162,7 @@ function SignUp() {
                 Register
               </button>
           </form>
-          <div className='error-block'>
-            <p id='error-message'  className='error-message'></p>
-          </div>
+        
         </div>
       </div>
     </div>

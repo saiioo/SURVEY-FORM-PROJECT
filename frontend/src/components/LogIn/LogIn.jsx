@@ -75,42 +75,18 @@
 
 
 import React, { useState } from "react";
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './LogIn.css'
 
-function Login({ history }) {
+function Login() {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage]=useState({status:"", message:""});
 
-  // const nav = Navigate()
-
-  // const handleFormSubmit = async (event) => {
-  //   console.log(password,email)
-  //   event.preventDefault();
-  //   try {
-  //     const response = await fetch('http://localhost:8080/user/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({ email, password })
-  //     });
-  //     const data = await response.json();
-  //     if (response.ok) {
-  //       localStorage.setItem('token', data.message.token);
-  //       localStorage.setItem('userdetails', JSON.stringify(data.message.userdetails));
-  //       history.push('/SurveyList');
-  //     } else {
-  //       console.log('i came here')
-  //       console.log(data.error);
-  //     }
-  //   } catch (error) {
-  //     console.log(' I came all the way down')
-  //     console.log(error);
-  //   }
-  // }
-
+  
+const navigate = useNavigate();
 
 const handleCheckInput=()=>{
   if(email===''){
@@ -134,22 +110,26 @@ const handleFormSubmit = async (event) => {
     console.log(data)
     
 
-    if (response.status === 200) {
-      alert('user login in sucsuessfully')
+    if (data.status!=="Failed") {
+      
       localStorage.setItem('token', data.message.token);
       localStorage.setItem(
         'userdetails',
         JSON.stringify(data.message.userdetails)
       );
+      navigate("/survey");
 
         
     } else {
-      console.log('i came here');
+      const errorMessage = data.message || 'Something went wrong';
+        document.getElementById('error-message').textContent = errorMessage;;
       console.log(data.error);
     }
   } catch (error) {
     console.log('I came all the way down');
     console.log(error.message);
+    setMessage(error?.response?.data);
+   
   }
 };
 
@@ -174,6 +154,9 @@ const handleFormSubmit = async (event) => {
           <p>Sign in to continue access pages</p>
         </div>
         <div className="form-body">
+        <div className='error-block'>
+            <p id='error-message'  className='error-message'></p>
+          </div>
           <form onSubmit={handleFormSubmit}>
             <label>
               <input placeholder="email" type="email" name="email" className="email-input" value={email} onChange={(event) => setEmail(event.target.value)} required/>

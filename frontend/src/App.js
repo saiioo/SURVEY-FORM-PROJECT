@@ -64,7 +64,7 @@ function App() {
 
         <Route path="/Reg" element={<SignUp/>}/>
         <Route path="/createQuestions" element={<Questions/>}/>
-        {/* <Route path='/' element={<SurveyList/>} /> */}
+        <Route path='/survey' element={<SurveyList/>} />
         {/* <Route path='form' element={<SurveyForm/>} /> */}
         <Route/>
       </Routes>

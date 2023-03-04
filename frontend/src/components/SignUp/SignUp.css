@@ -9,7 +9,10 @@ body{
   min-height: 100vh;
   overflow: hidden;
 }
-
+.error-block{
+  color:red;
+  text-align: center;
+}
 .container{
   width: 80%;
   height: 70vh;
