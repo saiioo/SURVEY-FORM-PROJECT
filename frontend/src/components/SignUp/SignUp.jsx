@@ -33,39 +33,6 @@ function SignUp() {
       [name]: checked,
     }));
   };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await fetch('http://localhost:8080/user/register', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-  //     if (response.status === 200) {
-  //        setDir(true)
-  //     } else {
-  //       const error = await response.json();
-  //       const errorMessage = error.message || 'Something went wrong';
-  //       document.getElementById('error-message').textContent = errorMessage;
-  //     }
-  //     if(response.status === 409){
-  //       alert('user already exists')
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //     document.getElementById('error-message').textContent =
-  //       error.message || 'Something went wrong';
-  //   }
-  //   console.log(formData)
-  // };
-
-
-
-
-
 const navigate = useNavigate()
 
  const handleSubmit = async (event) => {

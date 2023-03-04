@@ -318,32 +318,6 @@ function SurveyForm() {
 
   const [nav,setNav] = useState(false)
 
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (name && startDate && endDate && description && otherCriteria && type) {
-  //     console.log(name, startDate, endDate, description, otherCriteria, type)
-  //     const formData = new FormData();
-  //     formData.append('name', name);
-  //     formData.append('startDate', startDate);
-  //     formData.append('endDate', endDate);
-  //     formData.append('description', description);
-  //     formData.append('otherCriteria', otherCriteria);
-  //     formData.append('type', type);
-  //     formData.append('form_id', form_id)
-
-  //     // if (image) {
-  //     //   formData.append('image', image);
-  //     // }
-  //     console.log(formData)
-  //     axios.post('http://localhost:8080/createsurvey', formData)
-  //       .then(response => console.log(response))
-  //       .catch(error => console.log(error));
-  //       console.log('i came here')
-  //   } else {
-  //     alert('All fields are required to fill');
-  //   }
-  // };
   const handleSubmit = (event) => {
         event.preventDefault();
         if (name && startDate && endDate && description && otherCriteria && type) {
