@@ -56,7 +56,7 @@ function SurveyForm() {
   };
 
   return (
-    <div>
+    <div className="surveyForm-container">
       <Navbar />
       <div className="xoxo">
         <SideBar />

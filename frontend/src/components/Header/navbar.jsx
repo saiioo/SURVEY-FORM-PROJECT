@@ -12,7 +12,6 @@ const Navbar = ()=>{
                 <FaBookOpen color="red" size="50px"/>
             </div>
             <div  className="userInfo">
-            <div className="userImage"></div>
             <p className="username" ><AiOutlineUser color="green"  size="25px"/><b>{localname()}</b></p>
                 
             </div>

@@ -7,7 +7,7 @@ const verify = require("../auth/auth");
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
-router.post("/createsurvey", async(req, res)=> {
+router.post("/createsurvey", verify,async(req, res)=> {
     console.log('create survey fetched')
     try {
         if(req.body){
@@ -20,7 +20,8 @@ router.post("/createsurvey", async(req, res)=> {
                 description,
                 otherCriteria,
                 type,
-                form_id
+                form_id,
+                madeBy:req.user
             })
 
             if(surveyresult){
