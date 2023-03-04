@@ -46,10 +46,11 @@ table {
 	border-spacing: 0;
 }
 
-/* body{
-  background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+
+body{
+
   font-size: 1rem; 
-} */
+} 
 :root {
   --bodyColor: "#FFFFFF";
 }
@@ -58,7 +59,7 @@ body {
 }
 .container{
   width: 80%;
-  height: 70vh;
+  min-height: 100vh;
   margin: 8.33rem 8.19rem 5rem 11.69rem;
   display: flex;
   justify-content: space-between;

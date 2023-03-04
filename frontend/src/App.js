@@ -8,17 +8,21 @@ import SignUp from './components/SignUp/SignUp';
 import SurveyList from './components/SurveyList/SurveyList';
 import SurveyForm from './components/SurveyForm/SurveyForm';
 import Main from './components/Main/Main';
+import "./components/ThemesDropDownMenu/switch.scss"
 import CreateQuestion from './components/Pages/createQuestionPage';
+
 import SurveyQues from './components/SurveyList/SurveyQues';
+
+import ProtectedRoutes from './components/ProtectedRoutes/protectedRoutes';
+
+
 function App() {
-    const [theme, setTheme] = useState('white');
-  const currentColor = localStorage.getItem('theme-color');
-
-
-    useEffect(() => {
-    setTheme(currentColor)
-
-  }, [theme])
+  const [theme,setTheme] = useState('white')
+  
+  useEffect(()=>{
+    const color = localStorage.getItem('theme-color')
+      setTheme(color)
+  },[theme])
   return (
     <div  className={`App ${theme}`}>
       <BrowserRouter>
@@ -28,6 +32,7 @@ function App() {
         <Route path='/surveys' element={<SurveyList />}/>
         <Route path='/surveyform' element={<SurveyForm />}/>
         <Route path='/surveyform/surveys' element={<SurveyList />}/>
+        <Route element={<ProtectedRoutes/>}/>
         <Route path='*'>NOT found</Route>
         <Route path='logout' element={<Main/>}/>
         <Route path='/createques/:id'  element={<CreateQuestion />} />

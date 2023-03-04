@@ -30,9 +30,11 @@ body{
     color: white;
 }
 
-
-.App.blue{
+.App.white{
     background-color: #bec7e7;
+    body{
+        background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    }
     .body{
         background-color: #d6def4;
         h3,h5{
@@ -52,8 +54,37 @@ body{
         background-color: #d6def4;
     }
 }
+
+.App.blue{
+    background-color: #bec7e7;
+    body{
+        background: transparent linear-gradient(0deg, #bec7e7 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    }
+    .body{
+        background-color: #d6def4;
+        h3,h5{
+            color:#1e41c1;
+        }
+        p{
+            color: black;
+        }
+    }
+    aside{
+        background-color: #1e41c1;
+    }
+    nav{
+        background-color: #d6def4;
+    }
+    .dropdown-container{
+        background-color: #d6def4;
+    }
+}
+
 .App.orange{
     background-color: #f4b9c7;
+    body{
+        background: transparent linear-gradient(0deg, #b64b1e 0%, #f4b9c7 100%) 0% 0% no-repeat padding-box;
+    }
     .body{
         background-color: #f4dfd6;
         h3,h5{
@@ -75,6 +106,9 @@ body{
 }
 .App.purple{
     background-color: #d0b7f4;
+    body{
+        background: transparent linear-gradient(0deg, #7852ae 0%, #d0b7f4 100%) 0% 0% no-repeat padding-box;
+    }
     .body{
         background-color: #ecdfff;
         h3,h5{
@@ -96,6 +130,9 @@ body{
 }
 .App.green{
     background-color: #c3e3c1;
+    body{
+        background: transparent linear-gradient(0deg, #5faf3b 0%, #e2f6e1 100%) 0% 0% no-repeat padding-box;
+    }
     .body{
         background-color: #e2f6e1;
         h3,h5{
@@ -117,6 +154,9 @@ body{
 }
 .App.black{
     background-color: #5c5c5c;
+    body{
+        background: transparent linear-gradient(0deg, #5c5c5c 0%, #fff 100%) 0% 0% no-repeat padding-box;
+    }
     .body{
         background-color: #333;
         h3,h5{

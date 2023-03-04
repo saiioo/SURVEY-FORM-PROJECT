@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Header/navbar';
@@ -28,12 +29,14 @@ setBodyColor({color: "#ffffff"})
     fetchData();
   }, []);
 
+
   function handleClick(id) {
     setRid(id);
     setDir(true);
   }
 
   const rows = data.map((item) => {
+
     return (
       <tr key={item._id} id={item._id} onClick={() => handleClick(item._id)}>
         <td>{item.name}</td>
@@ -50,7 +53,7 @@ setBodyColor({color: "#ffffff"})
   });
 
   return (
-    <>
+    <div className='surveyList-container'>
       <Navbar />
       <div className="xoxo">
         <SideBar />
@@ -86,9 +89,11 @@ setBodyColor({color: "#ffffff"})
           </div>
         </main>
       </div>
-      {dir && <Navigate to={`/formques/${rid}`} />}
-    </>
-  );
+
+      {dir && <Navigate to={`/formques/${rid}`}/>}
+    </div>
+  )
+
 }
 
 export default SurveyList;

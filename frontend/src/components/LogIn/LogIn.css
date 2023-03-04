@@ -40,12 +40,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body{
-  background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+
+
+ body{
+  font-size: 1rem; 
 }
 .main-container{
   width: 100%;
-  height: 75vh;
+  min-height: 100vh;
+
+
   display: flex;
   justify-content: space-between;
   align-items: center;

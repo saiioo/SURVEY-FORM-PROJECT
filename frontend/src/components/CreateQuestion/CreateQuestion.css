@@ -13,4 +13,8 @@
     flex-direction: row;
     width:70%
 }
+.question-Container{
+    min-height: 100vh;
+    min-width: 100vw;
+}
 

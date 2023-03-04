@@ -10,6 +10,11 @@ body {
 .xoxo{
   display: flex;
 }
+
+.surveyList-container{
+  min-height:100vh;
+}
+
 .search-bar {
   margin-top: 4rem;
   width: 85vw;

@@ -7,7 +7,7 @@ import SideBar from "../SideBar/SideBar";
 import "./createQuestionspage.css"
 const CreateQuestion = ()=>{
      return(
-            <div>
+            <div className="createQuestion-container">
                 <Navbar/>
             <div>
                 <SideBar/>

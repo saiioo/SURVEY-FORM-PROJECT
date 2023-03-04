@@ -60,8 +60,8 @@ const navigate = useNavigate()
   return (
     <div className='container'>
       <div className='left-container'>
-        <h1 className='left-h1-1st'>Welcome Page</h1>
-        <h1 className='left-h1-2nd'>One line text Will be here</h1>
+        <h1 className='left-h1-1st'>Welcome To</h1>
+        <h1 className='left-h1-2nd'>MAP Survey to Create Survey</h1>
         <p className='left-p-1st'>Sign in to continue access pages</p>
         <p className='left-p-2nd'>
           Already Have An Account{' '}
