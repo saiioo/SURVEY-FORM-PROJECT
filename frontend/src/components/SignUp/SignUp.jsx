@@ -1,9 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import './SignUp.css'
+import axios from "axios";
 
 function SignUp() {
+  // const [dir,setDir] = useState(false)
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +16,7 @@ function SignUp() {
     confirmPassword: '',
     termsAgreed: false,
   });
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,43 +33,34 @@ function SignUp() {
       [name]: checked,
     }));
   };
+const navigate = useNavigate()
 
-  const handleSubmit = async (event) => {
+ const handleSubmit = async (event) => {
+  console.log("i came here")
     event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:8080/user/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.status === 200) {
-        window.location.href = '/login'; // redirect to login page
-      } else {
-        const error = await response.json();
-        const errorMessage = error.message || 'Something went wrong';
-        document.getElementById('error-message').textContent = errorMessage;
-      }
-      if(response.status == 409){
-        alert('user already exists')
-      }
-    } catch (error) {
-      console.log(error)
-      document.getElementById('error-message').textContent =
-        error.message || 'Something went wrong';
+    try{
+      const url = 'http://localhost:8080/user/register'
+      const {formData:res} = await axios.post(url, formData)
+      navigate('/')
+      console.log(res.message)
+    }catch(error){
+      if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
     }
-    console.log(formData)
   };
-
   return (
     <div className='container'>
       <div className='left-container'>
-        <h1 className='left-h1-1st'>Welcome MAP Survey</h1>
-        <h2 className='left-h1-2nd'>An online platform To create Survey</h2>
+        <h1 className='left-h1-1st'>Welcome Page</h1>
+        <h1 className='left-h1-2nd'>One line text Will be here</h1>
         <p className='left-p-1st'>Sign in to continue access pages</p>
         <p className='left-p-2nd'>
-          Already Have An Account*{' '}
+          Already Have An Account{' '}
           <Link to='/' className='left-link'>
             <button>
             Sign In
@@ -106,8 +101,6 @@ function SignUp() {
                   placeholder='phone'
                   type='number'
                   name='phone'
-                  minLength='10'
-                  maxLength='10'
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
@@ -152,8 +145,9 @@ function SignUp() {
                     onChange={handleCheckboxChange}
                     required
                   />
-                  I agree to the terms and conditions of this website.
+                  I agree to Terms & Condition receiving promotional materials
                 </label>
+                {error && <div className='error_msg'>{error}</div>}
             <button type='submit' className='btn'>
                 Register
               </button>

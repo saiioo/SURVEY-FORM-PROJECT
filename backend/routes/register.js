@@ -1,10 +1,13 @@
+
+
+
+
 const express=require('express');
 const userModel = require("../Models/registerSchema");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 router.use(express.urlencoded({ extended: true }))
 router.use(express.json())
-
 router.post("/user/register", async(req,res)=> {
     
     try{
@@ -20,7 +23,7 @@ router.post("/user/register", async(req,res)=> {
             const result = await userModel.create ({
                 name,
                 email,
-                phone:cryptedPassword,
+                phone,
                 profession,
                 password: cryptedPassword
             })
@@ -40,3 +43,39 @@ router.post("/user/register", async(req,res)=> {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+// const router = require('express').Router();
+// const { User, validate } = require('../models/registerSchema')
+// const bcrypt = require('bcrypt')
+
+
+
+// router.post('user/register', async(req,res)=>{
+//     try{
+//         const { error } = validate(req.body)
+//         if(error){
+//             return res.status(400).send({message:error.details[o].message});
+//         }
+//         const data = await User.findOne({email : req.body.email});
+//         if(data){
+//             return res.status(409).send({message: "User with given email already exist"})
+//         }
+
+//         const salt = await bcrypt.genSalt(Number(process.env.SALT));
+//         const hashpassword = await bcrypt.hash(req.body.password, salt);
+
+//         await new User({ ...req.body, password: hashpassword }).save();
+//         res.status(201).send({ message: "User created successfully" });
+//     }catch(error){
+//         res.status(500).send({ message: "Internal Server Error" });
+//     }
+// })
+
+
+// module.exports = router;

@@ -1,223 +1,194 @@
-body{
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ body{
   background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   font-size: 1rem; 
 }
-.register-button {
-  display: block;
-  margin-left: 0px;
-  padding: 0.5rem 2.5rem;
-  text-decoration: none;
-  background-color: #278DF1;
-  border-radius: 25px;
-  border: none;
-  color: white;
-  margin-top: 20px;
-  cursor: pointer;
-
-}
-
-.link-btn{
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-
-.main-container {
-  margin: 10vh auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  width: 80vw;
-}
-
-
-.header-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  background-color: #f8f8f8;
+.main-container{
   width: 100%;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
+  height: 75vh;
 
-.header-container h1,
-.header-container h2,
-.header-container p {
-  margin: 0.5rem 0;
-  text-align: left;
-}
-
-
-.upon-div{
-  width: 47rem;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15vh;
+  padding-left: 15vw;
 }
-.header-container p:last-child {
-  margin-top: 1rem;
-}
-.welcome-text{
-  width: 200px;
-}
+
+
 .welcome-container{
+  margin-top: 5rem;
+
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-}
-.form-container {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  max-width: 400px;
-  width: 400px;    
-  padding: 30px 40px 30px 20px;
+  justify-content: flex-start;
+  padding-left: 2rem;
 }
 
-.main-container label {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.form-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.form-header h2,
-.form-header p {
-  margin: 0.5rem 0;
-  text-align: center;
-}
-
-.form-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-body form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.form-body label {
-  padding-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
-}
-
-.form-body label input {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
 
 .welcome-header{
-  padding-bottom: 0.31rem;
-  margin: 0;
-  padding: 0;
   color: #5C5C5C;
   font-size: 2rem;
+  letter-spacing: 1px;
+  padding: 0.6rem 1rem 0 1rem;
+  width: 20rem;
   font-weight: 700;
 }
-
 .welcome-text{
-  font-size: 1.875rem;
-  width: 12.5rem;
-  font-weight: 500;
-  color: #6d6b6b;
-}
-
-.welcome-info{
-  font-size: 1rem;
-  padding-top: 1.2rem;
   color: #5C5C5C;
-}
+  font-size: 2rem;
+  letter-spacing: 1px;
+  padding: 0.6rem 1rem 0 1rem;
+  font-weight: 700;
+  width: 15rem;
 
+}
+.welcome-info{
+  color: #5C5C5C;
+  width: 20rem;
+  font-size: 1rem;
+  padding: 1.6rem 1rem 0 1rem;
+}
 .welcome-register{
   font-size: 0.75rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0.625rem;
+  padding: 3rem 1rem 0 1rem;
   color: #5C5C5C;
 }
 
-#signin-button{
-  border-radius: 25px;
-  padding: 0.4rem 3rem;
+.welcome-header button{
   background-color: #278DF1;
+  border: none;
+  border-radius: 25px;
+}
+
+
+
+.link-btn{
+  background-color: #278DF1;
+  border: none;
+  border-radius: 25px;
+  margin:0.3rem 1rem;
+  width: 124px;
+  text-decoration: none;
+  padding:0.3rem 1rem 0.4rem 2rem;
+  color: white; 
+  font-weight: 600;
+}
+
+.form-container{
+  margin-top: 50px;
+  width: 400px;
+  margin-right: 120px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.form-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem 1rem 2rem;
+}
+
+
+.form-header h2{
+  color: #000000;
+  font-weight: 700;
+  font-size: 35px;
+  padding-bottom: 1rem;
+}
+
+.form-header p{
+  color: #808080;
+  font-size: 14px;
+}
+
+.form-body{
+  /* width: 200px; */
+  padding: 2rem 0 1rem 0; 
+
+}
+
+.email-input{
+  border:none;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  padding-bottom: 6px;
+  margin-bottom: 2rem;
+  width: 250px;
+  margin-left: 70px;
+}
+
+.password-input{
+  border:none;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  padding-bottom: 6px;
+  width: 250px;
+  margin-left: 70px;
+}
+
+
+#signin-button{
+  padding: 0.5rem 2.2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
   color: white;
   border: none;
+  border-radius: 25px;
+  background-color: #278DF1;
   cursor: pointer;
 }
 
-.form-header h2{
-  color: black;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-}
-
-
-.form-header p{
-  color: #5C5C5C;
-
-}
 
 
 
-
-@media only screen and (min-width: 768px) {
-  .main-container {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f8f8;
-    width: 50%;
-    margin-bottom: 0;
-  }
-
-  .form-container {
-    margin-left: 1rem;
-  }
-
-  .header-container h1,
-  .header-container h2,
-  .header-container p {
-    margin: 0;
-    text-align: left;
-  }
-
-  .form-header {
-    margin-bottom: 2rem;
-  }
-
-  .form-body label input {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-  }
-  .form-body button {
-    width: auto;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-  }
-}
+/* .email-input{
+  display: inline-block;
+  width: 100px;
+} */
 
