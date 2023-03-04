@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom'
 
 
 function SurveyList() {
-if(localStorage.getItem("token")===null){
-  alert("Please Login first");
-}
+// if(localStorage.getItem("token")===null){
+//   alert("Please Login first");
+// }
   const data =[
     {
     id: 1,

@@ -1,35 +1,3 @@
-// import React from 'react';
-// // import { useEffect, useState } from 'react';
-// // import SurveyForm from './components/SurveyForm/SurveyForm';
-// // import SurveyList from './components/SurveyList/SurveyList';
-// // import CreateSurvey from './components/SurveyForm/SurveyForm';
-// // import SurveyList from './components/SurveyList/SurveyList';
-// // import "./components/ThemesDropDownMenu/switch.scss"
-
-// function App() {
-// //   const [theme, setTheme] = useState('white');
-// //   const currentColor = localStorage.getItem('theme-color');
-
-// {/* < SurveyList/> */}
-
-// //   useEffect(() => {
-// //     setTheme(currentColor)
-
-// //   }, [theme])
-//   return (
-//           <div className={`App ${theme}`}>
-//   <SurveyForm/>
-// </div>
-//   );
-// }
-// export default App;
-
-
-
-
-
-
-
 import React from 'react';
 
 import { useEffect, useState } from 'react';
@@ -43,6 +11,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from './components/LogIn/LogIn';
 import SignUp from './components/SignUp/SignUp';
 import Questions from './components/CreateQuestion/CreateQuestion';
+import ProtectedRoutes from './components/protectedRoutes/ProtectedRoutes';
 // import SurveyList from './components/SurveyList/SurveyList';
 
 function App() {
@@ -58,14 +27,12 @@ function App() {
     <div  className='App'>
       <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<LandingPage/>}/> */}
+        
         <Route path="/" element={<Login/>}/>
-        {/* <Route path='/SurveyList' element={<SurveyList />}/> */}
-
         <Route path="/Reg" element={<SignUp/>}/>
+        <Route element ={<ProtectedRoutes/>}/>
         <Route path="/createQuestions" element={<Questions/>}/>
         <Route path='/survey' element={<SurveyList/>} />
-        {/* <Route path='form' element={<SurveyForm/>} /> */}
         <Route/>
       </Routes>
     </BrowserRouter>
