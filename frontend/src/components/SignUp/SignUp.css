@@ -46,8 +46,16 @@ table {
 	border-spacing: 0;
 }
 
+
 body{
+
   font-size: 1rem; 
+} 
+:root {
+  --bodyColor: "#FFFFFF";
+}
+body {
+  background: var(--bodyColor);
 }
 .container{
   width: 80%;

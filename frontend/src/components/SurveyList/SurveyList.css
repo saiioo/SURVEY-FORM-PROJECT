@@ -1,9 +1,20 @@
+:root {
+  --bodyColor: "#000000";
+}
+body {
+  background-color: var(--bodyColor);
+}
+
+
+
 .xoxo{
   display: flex;
 }
+
 .surveyList-container{
   min-height:100vh;
 }
+
 .search-bar {
   margin-top: 4rem;
   width: 85vw;
@@ -98,6 +109,7 @@ img:hover{
   padding: 10px 10px;
   color: #4D4A4A;
   font-size: 14px;
+  font-weight: 700;
 }
 
 

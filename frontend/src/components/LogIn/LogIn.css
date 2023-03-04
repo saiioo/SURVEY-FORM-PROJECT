@@ -41,12 +41,14 @@ table {
 	border-spacing: 0;
 }
 
+
  body{
   font-size: 1rem; 
 }
 .main-container{
   width: 100%;
   min-height: 100vh;
+
 
   display: flex;
   justify-content: space-between;
@@ -183,11 +185,4 @@ table {
   cursor: pointer;
 }
 
-
-
-
-/* .email-input{
-  display: inline-block;
-  width: 100px;
-} */
 

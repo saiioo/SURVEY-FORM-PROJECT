@@ -3,15 +3,22 @@ import React, { useState } from "react";
 import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import './LogIn.css';
+// import setBodyColor from '../../setBodyColor'
+import setBodyColor from '../../setBodyColor'
 
 function Login() {
   const styles = {
-    backgroundColor : "red",
-    width: "150px",
-    padding:"5px 10px",
-    colo:"white",
-    margin:" 20px auto 0px auto"
+    // backgroundColor : "red",
+    // width: "150px",
+    // padding:"5px 10px",
+    // colo:"white",
+    // margin:" 20px auto 0px auto"
   }
+  // setBodyColor({color: "#282c34"})
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+setBodyColor({color: 'transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box'})
   const [direct, setDirect] = useState(false);
   const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
@@ -42,7 +49,8 @@ function Login() {
   };
 
   return (
-    <div className="main-container">
+    <div className="login-page">
+      <div className="main-container">
       <div className="welcome-container">
         <h1 className="welcome-header">Welcome To MAP Survey</h1>
         <h1 className="welcome-text">Best Surveys Will be here</h1>
@@ -85,6 +93,7 @@ function Login() {
           {direct && <Navigate to={'/surveys'}/>}
         </div>
       </div>
+    </div>
     </div>
   );
 }

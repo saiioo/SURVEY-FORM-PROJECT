@@ -1,52 +1,68 @@
-import React from 'react'
 
-function SurveyQues(){
-  // const params = useParams()
-  // axios.get(`formquestion/${params}`)
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .then(data=>setDet(data))
-  // .catch(function (error) {
-  //   console.log(error);
-  // })
-  const questions = [
-    {
-      question: "What is your favorite color?",
-      option1: "Blue",
-      option2: "Red",
-      option3: "Green"
-    },
-    {
-      question: "What is your favorite food?",
-      option1: "Pizza",
-      option2: "Sushi",
-      option3: "Burgers"
-    },
-    {
-      question: "What is your favorite movie?",
-      option1: "The Shawshank Redemption",
-      option2: "The Godfather",
-      option3: "The Dark Knight"
-    }
-  ];
-  const data = questions.map((item)=>{
-    return(
-      <div id={item.id}>
-        {item.question}
-        <ul>
-          <li>{item.option1}</li>
-          <li>{item.option2}</li>
-          <li>{item.option3}</li>
+
+import React, { useState, useEffect } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import axios from 'axios';
+import './SurveyQues.css'
+
+function SurveyQues() {
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+// setBodyColor({color: "radial-gradient(circle, rgba(238,174,202,1) 6%, rgba(233,148,148,1) 96%)"})
+setBodyColor({color:"black"})
+  const [questions, setQuestions] = useState([]);
+  const [dat, setDat] = useState([])
+  const [dir,setDir] = useState(false)
+  const params = useParams();
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/requested/questions/${params.id}`)
+      .then(response => {
+        console.log(response.data);
+        setDat(response.data.data[0])
+        setQuestions(response.data.data[0].questions);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [params.id]);
+  function handleClick(){
+    setDir(true)
+  }
+
+  const data = questions.map((item, index) => {
+    return (
+      <div className="questions-container" key={index}>
+        <h3 className='question-header-h3'>{item.text}</h3>
+        <ul  className='question-list-item'>
+          {item.options.map((option, optionIndex) => (
+            <li key={optionIndex}>
+              <label className='question-option'>
+                <input type="radio" name={item.text} value={option} />
+                {option}
+              </label>
+            </li>
+          ))}
         </ul>
       </div>
-    )
-  })  
+    );
+  });
 
-  return(
-    <div>
-      {data}
+  return (
+    <div className="the-container">
+      <div className="survey-header">
+        <h1 className='question-page-heading'>{dat.name} survey</h1>
+        <p className='question-head-p'>{dat.description}</p>
+        <p className='directions-para-top' >click below to get back to survey list</p>
+      <button onClick={handleClick}  className='directions-buttons-top' >SURVEY LIST</button>
+      </div >
+      <div className='question-answer-display' >{data}</div>
+      <p className='directions-para' >click below to get back to survey list</p>
+      <button onClick={handleClick} className='directions-buttons' >SURVEY LIST</button>
+      {dir && <Navigate to="/surveys" />}
     </div>
-  )
+  );
 }
+
 export default SurveyQues;

@@ -10,7 +10,11 @@ import SurveyForm from './components/SurveyForm/SurveyForm';
 import Main from './components/Main/Main';
 import "./components/ThemesDropDownMenu/switch.scss"
 import CreateQuestion from './components/Pages/createQuestionPage';
+
+import SurveyQues from './components/SurveyList/SurveyQues';
+
 import ProtectedRoutes from './components/ProtectedRoutes/protectedRoutes';
+
 
 function App() {
   const [theme,setTheme] = useState('white')
@@ -32,7 +36,7 @@ function App() {
         <Route path='*'>NOT found</Route>
         <Route path='logout' element={<Main/>}/>
         <Route path='/createques/:id'  element={<CreateQuestion />} />
-
+        <Route path= '/formques/:id'  element={<SurveyQues/>}/>
         <Route/>
       </Routes>
     </BrowserRouter>
