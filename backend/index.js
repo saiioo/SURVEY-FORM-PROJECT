@@ -10,11 +10,13 @@ conn();
 const registerRoute = require('../backend/routes/register')
 const loginRoute = require("./routes/login");
 // const createSurrajaveyRoute = require("../backend/models/surveySchema");
+const createques = require('./routes/displayQuestions')
 const createSurveyRoute = require("../backend/routes/createSurvey");
 const  routerTheme = require("./themes/themes")
 
 app.use(bodyParser.json());
 app.use(routerTheme)
+app.use(createques)
 app.use(registerRoute);
 app.use(loginRoute);
 app.use(createSurveyRoute);

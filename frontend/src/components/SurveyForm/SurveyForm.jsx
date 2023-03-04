@@ -297,7 +297,7 @@
 
 import Navbar from "../Header/navbar";
 import SideBar from "../SideBar/SideBar";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, Navigate } from 'react-router-dom'
 import axios from 'axios';
 import { v4 as uuid } from 'uuid';
@@ -307,7 +307,8 @@ import './SurveyForm.css';
 function SurveyForm() {
   const unique_id = uuid();
   const form_id = unique_id.slice(0,10)
-
+  const id = useRef(form_id)
+  console.log(id)
   const [name, setName] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -315,7 +316,6 @@ function SurveyForm() {
   const [otherCriteria, setOtherCriteria] = useState('');
   const [type, settype] = useState('');
   const [image, setImage] = useState(null);
-
   const [nav,setNav] = useState(false)
 
   const handleSubmit = (event) => {
@@ -329,7 +329,7 @@ function SurveyForm() {
             description: description,
             otherCriteria: otherCriteria,
             type: type,
-            form_id: form_id
+            form_id: id.current
           };
           console.log(data);
           axios.post('http://localhost:8080/createsurvey', data)
@@ -341,7 +341,6 @@ function SurveyForm() {
           alert('All fields are required to fill');
         }
       };
-
   const handleImageDrop = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
@@ -425,7 +424,7 @@ function SurveyForm() {
           </form>
         </div>
       </div>
-      {nav && <Navigate to={'/logout'} />}
+      {nav && <Navigate to={`/createques/${id.current}`} />}
     </div>
   );
 }
