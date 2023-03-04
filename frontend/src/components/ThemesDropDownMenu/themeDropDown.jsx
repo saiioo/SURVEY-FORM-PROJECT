@@ -3,7 +3,7 @@ import './switch.scss'
 import axios from "axios";
 import "./dropdown.css";
 import {HiChevronDown} from 'react-icons/hi'
-const  ThemeDropDown = ({color,setColor})=>{
+const  ThemeDropDown = ()=>{
     const[colorTheme,setColorTheme] = useState("white")
     const [selected,setSelected] = useState("Theme")
     const [theme,setTheme] = useState([])

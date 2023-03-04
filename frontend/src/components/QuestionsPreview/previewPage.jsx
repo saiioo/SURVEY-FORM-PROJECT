@@ -84,7 +84,7 @@ const PreviewPage = ({ questions, setQactive }) => {
   };
 
   return (
-    <div >
+    <div className="preview-container">
       <div>
         <button style={{ textAlign: 'center' }} onClick={e => { setIsActive(!isActive); setQactive(isActive); handleSelected(); }}> <h3>{selected}</h3></button>
         <button onClick={handleSubmit}>Save</button>

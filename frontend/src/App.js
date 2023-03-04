@@ -8,13 +8,19 @@ import SignUp from './components/SignUp/SignUp';
 import SurveyList from './components/SurveyList/SurveyList';
 import SurveyForm from './components/SurveyForm/SurveyForm';
 import Main from './components/Main/Main';
+import "./components/ThemesDropDownMenu/switch.scss"
 import CreateQuestion from './components/Pages/createQuestionPage';
 import ProtectedRoutes from './components/ProtectedRoutes/protectedRoutes';
 
 function App() {
-
+  const [theme,setTheme] = useState('white')
+  
+  useEffect(()=>{
+    const color = localStorage.getItem('theme-color')
+      setTheme(color)
+  },[theme])
   return (
-    <div  className="App">
+    <div  className={`App ${theme}`}>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login />}/>

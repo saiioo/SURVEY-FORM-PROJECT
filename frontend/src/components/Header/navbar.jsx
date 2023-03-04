@@ -17,7 +17,9 @@ const Navbar = ()=>{
                 
             </div>
             <span className="Logout"><Logout/></span>
-                <ThemeDropDown/>
+            <div className="dropdown-btn">
+            <ThemeDropDown/>
+            </div>
         </nav>
     )
 }

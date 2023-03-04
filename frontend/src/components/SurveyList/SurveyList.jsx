@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Header/navbar';
 import SideBar from '../SideBar/SideBar';
 import './SurveyList.css'
@@ -49,10 +49,10 @@ function SurveyList() {
     }
   ]
 
+
 function handleClick(id){
   setRid(id)
   setDir(true)
-
 }
   const ren = data.map((item) => {
     return (
@@ -69,7 +69,7 @@ function handleClick(id){
     )
   })
   return (
-    <>
+    <div className='surveyList-container'>
       <Navbar />
       <div className='xoxo'>
         <SideBar />
@@ -108,7 +108,7 @@ function handleClick(id){
         </main>
       </div>
       {dir && <Navigate to={`/formques/${rid}`}/>}
-    </>
+    </div>
   )
 }
 

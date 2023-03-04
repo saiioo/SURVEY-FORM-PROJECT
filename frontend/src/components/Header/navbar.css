@@ -10,6 +10,11 @@
     box-shadow: 3px 3px 10px 6px rgb(0,0,0,0.15);
     position: fixed
 }
+.dropdown-btn{
+    position: absolute;
+    left:85%;
+    top: 5px;
+}
 .Logout {
     border: 1px solid;
     border-radius: 10px;
