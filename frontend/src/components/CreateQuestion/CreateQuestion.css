@@ -17,4 +17,9 @@
     min-height: 100vh;
     min-width: 100vw;
 }
+.question-Container .question-field{
+    min-width:60vw ;
+    font-size: large;
+    
+}
 

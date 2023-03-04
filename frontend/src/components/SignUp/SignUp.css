@@ -4,7 +4,6 @@
 }
 
 
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,21 +47,22 @@ table {
 
 
 body{
-
+  background: var(--bodyColor);
+  min-height: 100vh;
   font-size: 1rem; 
+  overflow: hidden;
 } 
 :root {
   --bodyColor: "#FFFFFF";
 }
-body {
-  background: var(--bodyColor);
-}
+
 .container{
   width: 80%;
   min-height: 100vh;
   margin: 8.33rem 8.19rem 5rem 11.69rem;
   display: flex;
   justify-content: space-between;
+  overflow: none ;
 }
 
 

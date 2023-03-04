@@ -57,7 +57,7 @@ const QuestionForm = () => {
           <div>
               <div key={questionIndex} className="full-Question-option">
             <div className="question-addOption">
-                <p>Q.{num1}</p><input type="text" value={question.text} onChange={(event) => handleQuestionChange(event, questionIndex)} />
+                <p>Q.{num1}</p><input className="question-field" type="text" value={question.text} onChange={(event) => handleQuestionChange(event, questionIndex)} />
                 <button onClick={()=>{deleteQuestion(questionIndex)}}>Delete Question</button>
                 <button onClick={() => addOption(questionIndex)}>Add Option</button>
             </div>
