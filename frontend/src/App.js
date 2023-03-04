@@ -7,22 +7,14 @@ import Login from './components/LogIn/LogIn';
 import SignUp from './components/SignUp/SignUp';
 import SurveyList from './components/SurveyList/SurveyList';
 import SurveyForm from './components/SurveyForm/SurveyForm';
-// import SurveyQues from './components/SurveyList/SurveyQues';
 import Main from './components/Main/Main';
 import CreateQuestion from './components/Pages/createQuestionPage';
 import ProtectedRoutes from './components/ProtectedRoutes/protectedRoutes';
 
 function App() {
-    const [theme, setTheme] = useState('white');
-  const currentColor = localStorage.getItem('theme-color');
 
-
-    useEffect(() => {
-    setTheme(currentColor)
-
-  }, [theme])
   return (
-    <div  className={`App ${theme}`}>
+    <div  className="App">
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login />}/>

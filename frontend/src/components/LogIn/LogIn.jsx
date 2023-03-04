@@ -44,7 +44,7 @@ function Login() {
   return (
     <div className="main-container">
       <div className="welcome-container">
-        <h1 className="welcome-header">Survey Page</h1>
+        <h1 className="welcome-header">Welcome To MAP Survey</h1>
         <h1 className="welcome-text">Best Surveys Will be here</h1>
         <p className="welcome-info">Sign in to continue access pages</p>
         <p className="welcome-register"> Don’t Have An Account</p>
