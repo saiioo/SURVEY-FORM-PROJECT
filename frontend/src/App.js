@@ -10,6 +10,7 @@ import SurveyForm from './components/SurveyForm/SurveyForm';
 // import SurveyQues from './components/SurveyList/SurveyQues';
 import Main from './components/Main/Main';
 import CreateQuestion from './components/Pages/createQuestionPage';
+import ProtectedRoutes from './components/ProtectedRoutes/protectedRoutes';
 
 function App() {
     const [theme, setTheme] = useState('white');
@@ -29,6 +30,7 @@ function App() {
         <Route path='/surveys' element={<SurveyList />}/>
         <Route path='/surveyform' element={<SurveyForm />}/>
         <Route path='/surveyform/surveys' element={<SurveyList />}/>
+        <Route element={<ProtectedRoutes/>}/>
         <Route path='*'>NOT found</Route>
         <Route path='logout' element={<Main/>}/>
         <Route path='/createques/:id'  element={<CreateQuestion />} />

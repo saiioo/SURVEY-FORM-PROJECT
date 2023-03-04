@@ -25,6 +25,10 @@ function Login() {
         const url = "http://localhost:8080/user/login";
         const { data: res } = await axios.post(url, data);
         localStorage.setItem("token", res.data);
+        localStorage.setItem(
+          'userdetails',
+          JSON.stringify(res.message.userdetails)
+        );
         setDirect(true)
       } catch (error) {
         if (
