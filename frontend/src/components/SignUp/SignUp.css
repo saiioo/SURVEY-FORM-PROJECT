@@ -46,11 +46,16 @@ table {
 	border-spacing: 0;
 }
 
-body{
+/* body{
   background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   font-size: 1rem; 
+} */
+:root {
+  --bodyColor: "#FFFFFF";
 }
-
+body {
+  background: var(--bodyColor);
+}
 .container{
   width: 80%;
   height: 70vh;

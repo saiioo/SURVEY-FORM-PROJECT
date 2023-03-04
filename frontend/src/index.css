@@ -5,13 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-    font-size: 1rem; 
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.prev-response{
+  border: none;
+  display: inline-block;
+  background-color: white;
+  padding: 4px 60px;
+  margin: 1rem 40vw;
 }
 
 

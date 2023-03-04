@@ -1,95 +1,76 @@
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Navbar from '../Header/navbar';
 import SideBar from '../SideBar/SideBar';
-import './SurveyList.css'
-import { Link, Navigate,} from 'react-router-dom'
-
+import './SurveyList.css';
+import { Link, Navigate } from 'react-router-dom';
 
 function SurveyList() {
-
-  const [dir,setDir] = React.useState(false)
-  const [rid,setRid] = React.useState()
-
-  const data = [
-    {
-      id: 1,
-      title: 'Untitled',
-      name: 'Product A',
-      type: 'Type B',
-      description: 'Lorem ipsum dolor',
-      start_date: '2022-10-16',
-      end_date: '2022-11-08'
-    },
-    {
-      id: 2,
-      title: 'Untitled',
-      name: 'Product A',
-      type: 'Type B',
-      description: 'Lorem ipsum dolor',
-      start_date: '2022-10-16',
-      end_date: '2022-11-08'
-    },
-    {
-      id: 3,
-      title: 'Untitled',
-      name: 'Product A',
-      type: 'Type B',
-      description: 'Lorem ipsum dolor',
-      start_date: '2022-10-16',
-      end_date: '2022-11-08'
-    },
-    {
-      id: 4,
-      title: 'Untitled',
-      name: 'Product A',
-      type: 'Type B',
-      description: 'Lorem ipsum dolor',
-      start_date: '2022-10-16',
-      end_date: '2022-11-08'
-    }
-  ]
-
-function handleClick(id){
-  setRid(id)
-  setDir(true)
-
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
 }
-  const ren = data.map((item) => {
+setBodyColor({color: "#ffffff"})
+  const [dir, setDir] = useState(false);
+  const [rid, setRid] = useState();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/form/surveylist');
+        setData(response.data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  function handleClick(id) {
+    setRid(id);
+    setDir(true);
+  }
+
+  const rows = data.map((item) => {
     return (
+      <tr key={item._id} id={item._id} onClick={() => handleClick(item._id)}>
+        <td>{item.name}</td>
+        <td>{item.description}</td>
+        <td>Pulse</td>
+        <td>{item.startDate}</td>
+        <td>{item.endDate}</td>
+        <td>
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="edit-icon" />
+          <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="delete-icon" />
+        </td>
+      </tr>
+    );
+  });
 
-              <tr key={item.id} id={item.id} onClick={()=> handleClick(item.id)}>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>{item.title}</td>
-                  <td>{item.start_date}</td>
-                  <td>{item.end_date}</td>
-                  <td><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="edit-icon" /> <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="delete-icon" /> </td>
-              </tr>
-
-    )
-  })
   return (
     <>
       <Navbar />
-      <div className='xoxo'>
+      <div className="xoxo">
         <SideBar />
         <main>
-          <div className='search-bar'>
-            <div className='nb-right'>
-              <h3>
-                Survey List
-              </h3>
+          <div className="search-bar">
+            <div className="nb-right">
+              <h3>Survey List</h3>
               <img src="https://cdn-icons-png.flaticon.com/512/2811/2811790.png" alt="search-icon" />
-              <input type="text" />
+              <input className='seach-input-text' type="text" />
             </div>
-            <div className='nb-left'>
+            <div className="nb-left">
               <img src="https://cdn-icons-png.flaticon.com/512/8550/8550935.png" alt="burger-icon" />
               <img src="https://cdn-icons-png.flaticon.com/512/57/57164.png" alt="filter-icon" />
-              <Link to='/surveyform' ><button>create</button></Link>
+              <Link to="/surveyform">
+                <button>Create</button>
+              </Link>
             </div>
           </div>
           <div>
-            <table class="my-table">
+            <table className="my-table">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -100,16 +81,14 @@ function handleClick(id){
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                {ren}
-              </tbody>
+              <tbody>{rows}</tbody>
             </table>
           </div>
         </main>
       </div>
-      {dir && <Navigate to={`/formques/${rid}`}/>}
+      {dir && <Navigate to={`/formques/${rid}`} />}
     </>
-  )
+  );
 }
 
-export default SurveyList
+export default SurveyList;

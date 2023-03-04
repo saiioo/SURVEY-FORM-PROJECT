@@ -6,6 +6,10 @@ import axios from "axios";
 
 function SignUp() {
   // const [dir,setDir] = useState(false)
+ function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+};
+  setBodyColor({color: "transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box"})
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: '',
