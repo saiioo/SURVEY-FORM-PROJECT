@@ -9,7 +9,7 @@ const  ThemeDropDown = ()=>{
     const [theme,setTheme] = useState([])
     const [isActive, setIsActive] = useState(false)
     useEffect(()=>{
-       axios.get('http://localhost:8080/themes')
+       axios.get('https://surveyform-backend.onrender.com/themes')
         .then(res=>{
             const mytheme = res;
             setTheme(mytheme.data)

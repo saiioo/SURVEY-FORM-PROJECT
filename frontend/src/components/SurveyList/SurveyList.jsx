@@ -19,7 +19,7 @@ setBodyColor({color: "#ffffff"})
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/form/surveylist');
+        const response = await axios.get('https://surveyform-backend.onrender.com/form/surveylist');
         setData(response.data.data);
       } catch (error) {
         console.error(error);

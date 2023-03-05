@@ -35,7 +35,7 @@ function SurveyForm() {
             form_id: id.current
           };
           console.log(data);
-          axios.post('http://localhost:8080/createsurvey', data)
+          axios.post('https://surveyform-backend.onrender.com/createsurvey', data)
             .then(response => console.log(response))
             .catch(error => console.log(error));
           console.log('i came here');

@@ -22,7 +22,7 @@ const PreviewPage = ({ questions, setQactive }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/createquestion/${params.id}`, questions);
+      const response = await axios.put(`https://surveyform-backend.onrender.com/createquestion/${params.id}`, questions);
       setResponseMessage(response.data.message, "Your form is successfully submitted");
       setTimeout(()=>{
         navigate("/surveyform/surveys")

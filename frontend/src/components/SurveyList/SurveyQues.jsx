@@ -17,7 +17,7 @@ setBodyColor({color:"black"})
   const params = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/requested/questions/${params.id}`)
+    axios.get(`https://surveyform-backend.onrender.com/requested/questions/${params.id}`)
       .then(response => {
         console.log(response.data);
         setDat(response.data.data[0])

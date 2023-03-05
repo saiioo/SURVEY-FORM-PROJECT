@@ -43,7 +43,7 @@ const navigate = useNavigate()
   console.log("i came here")
     event.preventDefault();
     try{
-      const url = 'http://localhost:8080/user/register'
+      const url = 'https://surveyform-backend.onrender.com/user/register'
       const {formData:res} = await axios.post(url, formData)
       navigate('/')
       console.log(res.message)
