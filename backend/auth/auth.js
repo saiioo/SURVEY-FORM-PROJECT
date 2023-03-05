@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const user = require("../Models/registerSchema");
+const user = require("../models/registerSchema");
 const secret ="SurveyForm";
 
 
