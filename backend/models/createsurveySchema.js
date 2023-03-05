@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const surveySchema = new mongoose.Schema({
     name:{type:String, required:true},
-    startDate:{type:String,required:true},
+    startDate:{type:String},
     endDate:{type:String,required:true},
     description:{type:String,required:true},
     otherCriteria:{type:String},

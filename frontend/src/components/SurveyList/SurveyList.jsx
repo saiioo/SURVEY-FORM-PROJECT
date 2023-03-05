@@ -89,11 +89,9 @@ setBodyColor({color: "#ffffff"})
           </div>
         </main>
       </div>
-
       {dir && <Navigate to={`/formques/${rid}`}/>}
     </div>
   )
-
 }
 
 export default SurveyList;

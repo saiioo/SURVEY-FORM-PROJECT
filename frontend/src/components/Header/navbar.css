@@ -11,9 +11,8 @@
     position: fixed
 }
 .dropdown-btn{
-    position: absolute;
-    left:85%;
-    top: 5px;
+   padding-right: 10px;
+   margin-top: 2px;
 }
 .Logout {
     border: 1px solid;
@@ -23,7 +22,7 @@
     padding-top: 2px;
     padding-bottom: 5px;
     position: relative;
-    left:30px;
+    left:240px;
     background-color: green;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

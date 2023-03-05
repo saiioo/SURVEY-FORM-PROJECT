@@ -37,12 +37,12 @@ setBodyColor({color:"black"})
         <h3 className='question-header-h3'>{item.text}</h3>
         <ul  className='question-list-item'>
           {item.options.map((option, optionIndex) => (
-            <li key={optionIndex}>
+            <p key={optionIndex}>
               <label className='question-option'>
                 <input type="radio" name={item.text} value={option} />
                 {option}
               </label>
-            </li>
+            </p>
           ))}
         </ul>
       </div>

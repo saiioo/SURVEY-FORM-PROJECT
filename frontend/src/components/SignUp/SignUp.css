@@ -45,12 +45,13 @@ table {
 	border-spacing: 0;
 }
 
-
+body::-webkit-scrollbar{
+  display: none;
+}
 body{
   background: var(--bodyColor);
   min-height: 100vh;
   font-size: 1rem; 
-  overflow: hidden;
 } 
 :root {
   --bodyColor: "#FFFFFF";
@@ -62,7 +63,7 @@ body{
   margin: 8.33rem 8.19rem 5rem 11.69rem;
   display: flex;
   justify-content: space-between;
-  overflow: none ;
+  overflow: hidden ;
 }
 
 

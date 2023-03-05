@@ -13,6 +13,7 @@ router.post("/createsurvey", verify,async(req, res)=> {
         if(req.body){
             console.log(req.body)
             const {name, startDate, endDate, description, otherCriteria, type,form_id}= req.body;
+            req.user;
             const surveyresult = await surveyModel.create ({
                 name,
                 startDate,
@@ -41,7 +42,7 @@ router.post("/createsurvey", verify,async(req, res)=> {
         console.log(error);
         return res.status(500).json({
             status: "Failed",
-            message: "Internal Server Error"
+            message: error.message
         });
     }
     

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import "./QuestionPreview.css";
 import axios from 'axios';
 
@@ -8,6 +8,7 @@ const PreviewPage = ({ questions, setQactive }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState('See Preview');
   const [responseMessage, setResponseMessage] = useState('');
+  const navigate = useNavigate();
   const params = useParams();
   console.log(params);
 
@@ -23,6 +24,9 @@ const PreviewPage = ({ questions, setQactive }) => {
     try {
       const response = await axios.put(`http://localhost:8080/createquestion/${params.id}`, questions);
       setResponseMessage(response.data.message, "Your form is successfully submitted");
+      setTimeout(()=>{
+        navigate("/surveyform/surveys")
+      },2000)
     } catch (error) {
       console.error(error);
       setResponseMessage('An error occurred while saving the questions.');

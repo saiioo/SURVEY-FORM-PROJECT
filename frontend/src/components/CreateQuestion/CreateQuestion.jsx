@@ -66,12 +66,12 @@ const QuestionForm = () => {
               let num = optionIndex+1;
             return(
               <div className='option-div'>
-                <p>{num}.</p><input key={optionIndex} type="text" value={option} onChange={(event) => handleOptionChange(event, questionIndex, optionIndex)} />
-                
+                <p>{num}.</p><input className="option-field" key={optionIndex} type="text" value={option} onChange={(event) => handleOptionChange(event, questionIndex, optionIndex)} />
               </div>
             )
           })}
         </div>
+        <br />
           </div>
         )
         
