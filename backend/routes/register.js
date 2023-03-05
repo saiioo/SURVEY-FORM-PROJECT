@@ -3,7 +3,7 @@
 
 
 const express=require('express');
-const userModel = require("../Models/registerSchema");
+const userModel = require("../models/registerSchema");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 router.use(express.urlencoded({ extended: true }))
