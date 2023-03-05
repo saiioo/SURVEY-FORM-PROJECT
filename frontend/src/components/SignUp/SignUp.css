@@ -58,14 +58,18 @@ body{
 }
 
 .container{
+  position:fixed;
+  top: -20px;
   width: 80%;
-  min-height: 100vh;
+  max-height: 100vh;
   margin: 8.33rem 8.19rem 5rem 11.69rem;
   display: flex;
   justify-content: space-between;
   overflow: hidden ;
 }
-
+.right-second-div{
+  height: auto;
+}
 
 .left-container{
   display: flex;

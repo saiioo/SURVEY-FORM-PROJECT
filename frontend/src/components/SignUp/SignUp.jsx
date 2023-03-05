@@ -1,10 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Link,useNavigate} from 'react-router-dom';
 import './SignUp.css'
 import axios from "axios";
 
 function SignUp() {
+  useEffect(()=>{
+    localStorage.removeItem('theme-color')
+  },[])
   // const [dir,setDir] = useState(false)
  function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
@@ -40,11 +43,12 @@ function SignUp() {
 const navigate = useNavigate()
 
  const handleSubmit = async (event) => {
+  event.preventDefault();
   console.log("i came here")
-    event.preventDefault();
     try{
       const url = 'https://surveyform-backend.onrender.com/user/register'
       const {formData:res} = await axios.post(url, formData)
+
       navigate('/')
       console.log(res.message)
     }catch(error){
@@ -152,7 +156,7 @@ const navigate = useNavigate()
                   I agree to Terms & Condition receiving promotional materials
                 </label>
                 {error && <div className='error_msg'>{error}</div>}
-            <button type='submit' className='btn'>
+            <button type='submit' className='btn' onClick={handleSubmit}>
                 Register
               </button>
           </form>

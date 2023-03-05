@@ -1,12 +1,13 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import './LogIn.css';
-// import setBodyColor from '../../setBodyColor'
-import setBodyColor from '../../setBodyColor'
 
 function Login() {
+  useEffect(()=>{
+    localStorage.removeItem('theme-color')
+  },[])
   const styles = {
     // backgroundColor : "red",
     // width: "150px",
@@ -17,6 +18,8 @@ function Login() {
   // setBodyColor({color: "#282c34"})
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
+ 
+
 }
 setBodyColor({color: 'transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box'})
   const [direct, setDirect] = useState(false);
