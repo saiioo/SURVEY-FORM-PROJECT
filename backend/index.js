@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(cors())
 let port =process.env.PORT ||  8080;
-const conn = require("./Database/db");
+const conn = require("./database/db");
 conn();
 
 const surveylist = require('../backend/routes/surveylist')
