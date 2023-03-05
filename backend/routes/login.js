@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const userModel = require("../Models/registerSchema");
+const userModel = require("../models/registerSchema");
 const jwt = require("jsonwebtoken");
 
 const secret = "SurveyForm";
