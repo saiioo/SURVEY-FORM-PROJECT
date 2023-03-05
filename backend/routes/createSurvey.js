@@ -7,13 +7,12 @@ const verify = require("../auth/auth");
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
-router.post("/createsurvey", verify,async(req, res)=> {
+router.post("/createsurvey",async(req, res)=> {
     console.log('create survey fetched')
     try {
         if(req.body){
             console.log(req.body)
             const {name, startDate, endDate, description, otherCriteria, type,form_id}= req.body;
-            req.user;
             const surveyresult = await surveyModel.create ({
                 name,
                 startDate,
@@ -21,8 +20,7 @@ router.post("/createsurvey", verify,async(req, res)=> {
                 description,
                 otherCriteria,
                 type,
-                form_id,
-                madeBy:req.user
+                form_id
             })
 
             if(surveyresult){
@@ -42,11 +40,10 @@ router.post("/createsurvey", verify,async(req, res)=> {
         console.log(error);
         return res.status(500).json({
             status: "Failed",
-            message: error.message
+            message: "Internal Server Error"
         });
     }
     
 })
 
 module.exports = router;
-

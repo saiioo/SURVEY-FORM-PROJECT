@@ -1,15 +1,16 @@
 const express = require("express");
 const surveyModel = require("../models/surveySchema");
 const router = express.Router();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const {verify}  = require("jsonwebtoken");
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
-router.get("/form/surveylist", async(req, res)=> {
-  console.log("I am in surveylist get method")
+router.get("/form/surveylist", verify,async(req, res)=> {
+
   try{
     const data = await surveyModel.find()
-    console.log(data)
+   
     if(data){
       return res.status(200).json({
         "message" : "success",

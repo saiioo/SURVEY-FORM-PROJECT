@@ -31,14 +31,14 @@ body{
 }
 
 .App.white{
-    background-color: #bec7e7;
+    background: transparent linear-gradient(0deg, #8fc9e2 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
     body{
-        background: transparent linear-gradient(0deg, #6ED4FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+        background: transparent linear-gradient(0deg, #c1d1d8 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
     }
     .body{
-        background-color: #d6def4;
+        background-color: #f8f8fa;
         h3,h5{
-            color:#1e41c1;
+            color:#e8eaf0;
         }
         p{
             color: black;
@@ -48,10 +48,10 @@ body{
         background-color: #1e41c1;
     }
     nav{
-        background-color: #d6def4;
+        background-color: #b1badb;
     }
     .dropdown-container{
-        background-color: #d6def4;
+        background-color: #b1badb;
     }
 }
 
