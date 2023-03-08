@@ -1,7 +1,7 @@
 
 const mongoose=require('mongoose')
 mongoose.set('strictQuery', false)
-const uri = `mongodb+srv://SurveyForm:surveyform@survey.jxtzrj2.mongodb.net/?retryWrites=true&w=majority`
+const uri = process.env.URI
 async function getConnection() {
     await mongoose.connect(uri, (err)=>{
         if(err){
